@@ -10,6 +10,7 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import './globals.css';
 import './theme.css';
 import { AgentProvider } from '@/contexts/agentContext';
+import StickyChat from '@/components/stickyChat';
 
 const META_THEME_COLORS = {
   light: '#ffffff',

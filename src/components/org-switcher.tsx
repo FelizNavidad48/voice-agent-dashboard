@@ -16,7 +16,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem
 } from '@/components/ui/sidebar';
-import { useAgent } from '@/contexts/agentContext';
 import { useEffect } from 'react';
 
 interface Agent {
@@ -39,19 +38,17 @@ export function OrgSwitcher({
   );
 
   // @ts-ignore
-  const { agentId, setAgentId } = useAgent();
   const [agentsList, setAgentsList] = React.useState<Agent[]>(agents);
-
-  useEffect(() => {
-    setAgentId(defaultAgent.id);
-  }, []);
+  //
+  // useEffect(() => {
+  //   setAgentId(defaultAgent.id);
+  // }, []);
 
   const handleAgentSwitch = (agent: Agent) => {
     setSelectedAgent(agent);
     if (onAgentSwitch) {
       onAgentSwitch(agent.id);
     }
-    setAgentId(agent.id);
   };
 
   const handleCreateNewAgent = () => {
@@ -59,7 +56,7 @@ export function OrgSwitcher({
     const newAgentNumber = agentsList.length + 1;
     const newAgent: Agent = {
       id: `agent-${newAgentNumber}`,
-      name: `Agent ${newAgentNumber}`
+      name: `Project ${newAgentNumber}`
     };
 
     // Add to agents list
@@ -94,7 +91,7 @@ export function OrgSwitcher({
                 <GalleryVerticalEnd className='size-4' />
               </div>
               <div className='flex flex-col gap-0.5 leading-none'>
-                <span className='font-semibold'>Agent</span>
+                <span className='font-semibold'>Project</span>
                 <span className=''>{selectedAgent.name}</span>
               </div>
               <ChevronsUpDown className='ml-auto' />

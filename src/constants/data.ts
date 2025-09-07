@@ -37,6 +37,14 @@ export const navItems: NavItem[] = [
     shortcut: ['p', 'p'],
     isActive: false,
     items: [] // No child items
+  },
+  {
+    title: 'Integrations',
+    url: '/dashboard/integrations',
+    icon: 'laptop',
+    shortcut: ['p', 'p'],
+    isActive: false,
+    items: [] // No child items
   }
   // {
   //   title: 'Account',

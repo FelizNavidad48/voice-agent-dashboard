@@ -1,7 +1,7 @@
 import PageContainer from '@/components/layout/page-container';
 import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
-import { AgentConfigurationForm } from '@/features/configuration/components/agent-configuration-form';
+import AgentConfigurationForm from '@/features/configuration/components/agent-configuration-form';
 
 export const metadata = {
   title: 'Dashboard: Agent Configuration'
@@ -16,7 +16,7 @@ export default function Page() {
         {/*    description='Customize the behavior and personality of your AI voice agent.'*/}
         {/*/>*/}
         {/*<Separator />*/}
-        <div className='max-w-8xl'>
+        <div className='max-w-8xl flex w-full items-start'>
           <AgentConfigurationForm />
         </div>
       </div>
