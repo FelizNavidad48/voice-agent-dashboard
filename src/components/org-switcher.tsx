@@ -1,12 +1,14 @@
 'use client';
 
-import { Check, ChevronsUpDown, GalleryVerticalEnd } from 'lucide-react';
+import { Check, ChevronsUpDown, GalleryVerticalEnd, Plus } from 'lucide-react';
 import * as React from 'react';
+import { useRouter } from 'next/navigation';
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import {
@@ -14,35 +16,71 @@ import {
   SidebarMenuButton,
   SidebarMenuItem
 } from '@/components/ui/sidebar';
+import { useAgent } from '@/contexts/agentContext';
+import { useEffect } from 'react';
 
-interface Tenant {
+interface Agent {
   id: string;
   name: string;
 }
 
 export function OrgSwitcher({
-  tenants,
-  defaultTenant,
-  onTenantSwitch
+  agents,
+  defaultAgent,
+  onAgentSwitch
 }: {
-  tenants: Tenant[];
-  defaultTenant: Tenant;
-  onTenantSwitch?: (tenantId: string) => void;
+  agents: Agent[];
+  defaultAgent: Agent;
+  onAgentSwitch?: (agentId: string) => void;
 }) {
-  const [selectedTenant, setSelectedTenant] = React.useState<
-    Tenant | undefined
-  >(defaultTenant || (tenants.length > 0 ? tenants[0] : undefined));
+  const router = useRouter();
+  const [selectedAgent, setSelectedAgent] = React.useState<Agent | undefined>(
+    defaultAgent || (agents.length > 0 ? agents[0] : undefined)
+  );
 
-  const handleTenantSwitch = (tenant: Tenant) => {
-    setSelectedTenant(tenant);
-    if (onTenantSwitch) {
-      onTenantSwitch(tenant.id);
+  // @ts-ignore
+  const { agentId, setAgentId } = useAgent();
+  const [agentsList, setAgentsList] = React.useState<Agent[]>(agents);
+
+  useEffect(() => {
+    setAgentId(defaultAgent.id);
+  }, []);
+
+  const handleAgentSwitch = (agent: Agent) => {
+    setSelectedAgent(agent);
+    if (onAgentSwitch) {
+      onAgentSwitch(agent.id);
     }
+    setAgentId(agent.id);
   };
 
-  if (!selectedTenant) {
+  const handleCreateNewAgent = () => {
+    // Create new agent with incremented number
+    const newAgentNumber = agentsList.length + 1;
+    const newAgent: Agent = {
+      id: `agent-${newAgentNumber}`,
+      name: `Agent ${newAgentNumber}`
+    };
+
+    // Add to agents list
+    setAgentsList((prev) => [...prev, newAgent]);
+
+    // Set as selected agent
+    setSelectedAgent(newAgent);
+
+    // Call the callback if provided
+    if (onAgentSwitch) {
+      onAgentSwitch(newAgent.id);
+    }
+
+    // Navigate to configuration page
+    router.push('/dashboard/configuration');
+  };
+
+  if (!selectedAgent) {
     return null;
   }
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -56,8 +94,8 @@ export function OrgSwitcher({
                 <GalleryVerticalEnd className='size-4' />
               </div>
               <div className='flex flex-col gap-0.5 leading-none'>
-                <span className='font-semibold'>Next Starter</span>
-                <span className=''>{selectedTenant.name}</span>
+                <span className='font-semibold'>Agent</span>
+                <span className=''>{selectedAgent.name}</span>
               </div>
               <ChevronsUpDown className='ml-auto' />
             </SidebarMenuButton>
@@ -66,17 +104,20 @@ export function OrgSwitcher({
             className='w-[--radix-dropdown-menu-trigger-width]'
             align='start'
           >
-            {tenants.map((tenant) => (
+            {agentsList.map((agent) => (
               <DropdownMenuItem
-                key={tenant.id}
-                onSelect={() => handleTenantSwitch(tenant)}
+                key={agent.id}
+                onSelect={() => handleAgentSwitch(agent)}
               >
-                {tenant.name}{' '}
-                {tenant.id === selectedTenant.id && (
-                  <Check className='ml-auto' />
-                )}
+                {agent.name}{' '}
+                {agent.id === selectedAgent.id && <Check className='ml-auto' />}
               </DropdownMenuItem>
             ))}
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onSelect={handleCreateNewAgent}>
+              <Plus className='mr-2 h-4 w-4' />
+              Create New Agent
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

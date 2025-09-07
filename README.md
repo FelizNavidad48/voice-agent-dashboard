@@ -55,7 +55,7 @@ src/
 │ ├── (auth)/ # Auth route group
 │ │ ├── (signin)/
 │ ├── (dashboard)/ # Dashboard route group
-│ │ ├── layout.tsx
+│ │ ├── page.tsx
 │ │ ├── loading.tsx
 │ │ └── page.tsx
 │ └── api/ # API routes

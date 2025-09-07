@@ -20,9 +20,9 @@ export type Product = {
   updated_at: string;
 };
 
-// Mock product data store
+// Mock configuration data store
 export const fakeProducts = {
-  records: [] as Product[], // Holds the list of product objects
+  records: [] as Product[], // Holds the list of configuration objects
 
   // Initialize with sample data
   initialize() {
@@ -127,11 +127,11 @@ export const fakeProducts = {
     };
   },
 
-  // Get a specific product by its ID
+  // Get a specific configuration by its ID
   async getProductById(id: number) {
     await delay(1000); // Simulate a delay
 
-    // Find the product by its ID
+    // Find the configuration by its ID
     const product = this.records.find((product) => product.id === id);
 
     if (!product) {

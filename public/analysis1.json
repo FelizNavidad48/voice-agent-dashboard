@@ -1,0 +1,22 @@
+{
+  "agent_id": "my-agent-123",
+  "total_conversations": 25,
+  "overall_sentiment": {
+    "average_score": 0.234,
+    "classification": "positive"
+  },
+  "sentiment_breakdown": {
+    "counts": {"positive": 15, "negative": 5, "neutral": 5},
+    "percentages": {"positive": 60.0, "negative": 20.0, "neutral": 20.0}
+  },
+  "key_insights": {
+    "what_customers_love": [
+      "Customers praise the helpful and responsive support team",
+      "Fast response times and quick issue resolution are highly valued"
+    ],
+    "areas_for_improvement": [
+      "Product quality issues reported - focus on reliability",
+      "Slow response times causing customer frustration"
+    ]
+  }
+}

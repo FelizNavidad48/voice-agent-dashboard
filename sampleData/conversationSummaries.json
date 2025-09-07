@@ -1,0 +1,91 @@
+{
+  "conversation_summaries": [
+    {
+      "conversation_id": "CR_001",
+      "summary_id": "SUM_001",
+      "customer_name": "Sarah Martinez",
+      "product": "Wireless Bluetooth Headphones - Model XR-500",
+      "overall_sentiment": "Highly Positive",
+      "customer_rating": 5,
+      "summary": {
+        "overview": "Customer reached out proactively to share overwhelmingly positive feedback about their recent headphone purchase. The conversation demonstrates excellent product satisfaction and brand loyalty building.",
+        "key_highlights": [
+          "Product exceeded expectations in sound quality, battery life, and premium appearance",
+          "Delivery was faster than promised (3 days vs 5 days expected)",
+          "Customer expressed intent to leave 5-star review and recommend to colleagues",
+          "Minor feedback: product photos didn't fully convey the premium look"
+        ],
+        "customer_experience": "Exceptional - customer was so satisfied they initiated contact to share positive feedback",
+        "resolution": "No issues to resolve. Agent successfully encouraged customer to leave online review and reinforced positive brand sentiment.",
+        "business_impact": "Strong potential for word-of-mouth marketing and positive online reviews. Customer indicated plans to recommend product to colleagues.",
+        "agent_performance": "Excellent - engaged positively, gathered valuable feedback, and encouraged review submission",
+        "follow_up_needed": "None required. Monitor for submitted review and potential referral purchases."
+      }
+    },
+    {
+      "conversation_id": "CR_002",
+      "summary_id": "SUM_002",
+      "customer_name": "Michael Chen",
+      "product": "Smart Fitness Tracker - FitLife Pro 3",
+      "overall_sentiment": "Mixed to Positive",
+      "customer_rating": 4,
+      "summary": {
+        "overview": "Customer contacted support regarding inconsistent heart rate monitoring on fitness tracker. Despite hardware defect, positive resolution through replacement process led to retained customer satisfaction.",
+        "key_highlights": [
+          "Product had significant heart rate sensor malfunction causing erratic readings",
+          "Customer appreciated other features: step counting, sleep tracking, battery life",
+          "Customer had already attempted troubleshooting before contacting support",
+          "Swift replacement offered and processed within conversation"
+        ],
+        "customer_experience": "Initially frustrated but ultimately satisfied with resolution speed and service quality",
+        "resolution": "Immediate replacement arranged with expedited shipping. Customer data preserved through app sync. Faulty unit return arranged with prepaid label.",
+        "business_impact": "Potential quality control issue identified. Customer retention achieved through excellent service recovery. Customer expressed willingness to purchase again.",
+        "agent_performance": "Excellent - quickly identified defective unit, offered immediate solution, explained process clearly, maintained positive relationship",
+        "follow_up_needed": "Monitor replacement delivery and follow up post-delivery to ensure new unit functions properly. Flag heart rate sensor QC issue to product team."
+      }
+    },
+    {
+      "conversation_id": "CR_003",
+      "summary_id": "SUM_003",
+      "customer_name": "Emma Thompson",
+      "product": "Organic Cotton Bed Sheet Set - Queen Size, Sage Green",
+      "overall_sentiment": "Negative with Recovery Attempt",
+      "customer_rating": 2,
+      "summary": {
+        "overview": "Customer experienced multiple quality issues including color mismatch and fabric shrinkage. Agent attempted service recovery through personalized replacement process and quality assurance promises.",
+        "key_highlights": [
+          "Significant color variance from website photos (sage green appeared gray-green)",
+          "Substantial shrinkage after following care instructions, causing fit issues",
+          "Customer initially hesitant to accept replacement due to lost confidence",
+          "Agent escalated to personal oversight and quality control verification"
+        ],
+        "customer_experience": "Highly disappointed initially, cautiously optimistic after recovery efforts",
+        "resolution": "Full refund offered initially, then personalized replacement with guaranteed color match and quality control inspection. 20% future purchase credit included as goodwill gesture.",
+        "business_impact": "Multiple quality control failures identified requiring investigation. Risk of negative reviews mitigated through recovery effort. Customer agreed to update review based on replacement experience.",
+        "agent_performance": "Good recovery skills - escalated appropriately, offered personalized solution, took ownership of resolution process",
+        "follow_up_needed": "Critical - Personal follow-up required post-delivery. Quality control team must investigate color variance and shrinkage issues. Monitor for review updates."
+      }
+    }
+  ],
+  "summary_analytics": {
+    "total_conversations": 3,
+    "sentiment_distribution": {
+      "positive": 1,
+      "mixed": 1,
+      "negative_with_recovery": 1
+    },
+    "average_rating": 3.67,
+    "common_themes": [
+      "Product quality expectations vs reality",
+      "Importance of proactive customer service",
+      "Impact of service recovery on customer retention",
+      "Value of personalized attention in problem resolution"
+    ],
+    "business_insights": [
+      "Positive experiences generate organic marketing through reviews and referrals",
+      "Hardware defects can be overcome through excellent service recovery",
+      "Quality control issues require systematic investigation to prevent recurrence",
+      "Personalized service recovery can salvage relationships with disappointed customers"
+    ]
+  }
+}
